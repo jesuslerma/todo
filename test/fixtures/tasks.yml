@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  scaffold: MyString
+  name: MyString
+  description: MyText
+  completed: false
+  user: one
+
+two:
+  scaffold: MyString
+  name: MyString
+  description: MyText
+  completed: false
+  user: two
