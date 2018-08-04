@@ -1,0 +1,25 @@
+<%= form_with(@user, url: sign_in_path(@user)) do |form| %>
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :password %>
+    <%= form.text_area :password %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tasks_id %>
+    <%= form.text_field :tasks_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

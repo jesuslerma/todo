@@ -1,6 +1,23 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
+  def sign_in
+    user_name = user_params[:name]
+    @user = User.find_by_name(user_name)
+
+    unless @user
+      redirect_to root_path, notice: 'User doesnt exist'
+    elsif @user.password == user_params[:password]
+      session[:user_id] = @user.id
+      redirect_to root_path, notice: 'User successfully sign in'
+    else
+      redirect_to root_path, notice: 'Incorrect password'
+    end
+  end
+
+  def login
+    @user = User.new
+  end
   # GET /users
   # GET /users.json
   def index
