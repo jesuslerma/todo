@@ -5,7 +5,6 @@
 <table>
   <thead>
     <tr>
-      <th>Scaffold</th>
       <th>Name</th>
       <th>Description</th>
       <th>Completed</th>
@@ -17,11 +16,10 @@
   <tbody>
     <% @tasks.each do |task| %>
       <tr>
-        <td><%= task.scaffold %></td>
         <td><%= task.name %></td>
         <td><%= task.description %></td>
         <td><%= task.completed %></td>
-        <td><%= task.user %></td>
+        <td><%= task.user.name %></td>
         <td><%= link_to 'Show', task %></td>
         <td><%= link_to 'Edit', edit_task_path(task) %></td>
         <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
